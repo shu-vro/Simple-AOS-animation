@@ -22,30 +22,3 @@ for (let i = 0; i < array.length; i++) {
         }
     })
 }
-
-
-
-
-
-
-
-
-
-// const sliderImage = document.querySelectorAll('.box');
-
-// function checkSlider(e) {
-//     sliderImage.forEach(sliderImage => {
-//         // half way to the image
-//         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-//         // bottom of the image
-//         const imageBottom = sliderImage.offsetTop + sliderImage.height;
-//         const isHalfShown = slideInAt > sliderImage.offsetTop;
-//         const isNotScrolledPast = window.scrollY < imageBottom;
-//         if (isHalfShown && isNotScrolledPast) {
-//             sliderImage.classlist.add('active');
-//         } else {
-//             sliderImage.classlist.remove('active');
-//         }
-//     });
-// }
-// window.addEventListener('scroll', checkSlider);
