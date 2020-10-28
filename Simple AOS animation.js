@@ -1,4 +1,5 @@
-var array = [
+// Name of the targets.
+var AnimationArray = [
     'box1',
     'box2',
     'box3',
@@ -7,18 +8,18 @@ var array = [
     'box6',
 ];
 
-for (let i = 0; i < array.length; i++) {
+for (let i = 0; i < AnimationArray.length; i++) {
     window.addEventListener('scroll', function () {
         // Select elements
-        var container = document.getElementById('' + array[i] + '');
+        var target = document.getElementById('' + AnimationArray[i] + '');
 
         // Get position
-        var target = container.getBoundingClientRect().top - (2 * window.innerHeight / 3);
+        var position = target.getBoundingClientRect().top - (2 * window.innerHeight / 3);
 
-        if (target <= 0) {
-            container.classList.add('active');
+        if (position <= 0) {
+            target.classList.add('active');
         } else {
-            container.classList.remove('active');
+            target.classList.remove('active');
         }
     })
 }
