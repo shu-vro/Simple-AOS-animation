@@ -13,9 +13,32 @@ body {
 }
 
 section {
+    position: relative;
     width: 100%;
     height: 100vh;
     background: repeating-radial-gradient(#000000 0px, #000000 10px, #fff 10px, #fff 20px);
+}
+
+section h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 0, 64);
+    font-size: 2em;
+    text-align: center;
+}
+
+section h2 {
+    color: crimson;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    -webkit-text-stroke: 2px black;
 }
 
 .container {
