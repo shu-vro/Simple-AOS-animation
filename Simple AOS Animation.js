@@ -1,5 +1,4 @@
 var aos_container = document.querySelectorAll('.aos_container');
-var aos_content = document.querySelectorAll('.aos_content');
 
 for (let i = 0; i < aos_container.length; i++) {
     window.addEventListener('scroll', (e) => {
