@@ -3,289 +3,139 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Montserrat', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: #555555;
+    box-sizing: border-box;
 }
 
 section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: repeating-radial-gradient(#000000 0px, #000000 10px, #fff 10px, #fff 20px);
+    background: linear-gradient(0deg, #F247A6, #FF1D09);
 }
 
-section h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(255, 0, 64);
-    font-size: 2em;
-    text-align: center;
+section:nth-child(1) {
+    background: linear-gradient(180deg, #F247A6, #FF1D09);
 }
 
-section h2 {
-    color: crimson;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3em;
-    text-align: center;
+h1 {
+    position: relative;
     width: 100%;
-    -webkit-text-stroke: 2px black;
+    height: 100vh;
+    top: 45vh;
+    color: white;
+    text-align: center;
+    font-size: 3em;
 }
 
+/* The main program starts */
 .container {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-height: 100vh;
+    background: #FF1D09;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
-.container .box {
+/* Some constant values which will apply on every projects. */
+.container .aos_container .aos_content {
     position: relative;
-    width: 450px;
-    height: 350px;
-    background: #000;
-    margin: 30px;
+    height: calc(1 * 350px);
+    width: calc(1.4142 * 350px);
+    margin: 20px;
     transition: .5s;
+    transition-property: opacity, transform;
 }
 
-
-
-/* Box animation starts... */
-#box1 {
+.container .aos_container .aos_content {
     opacity: 0;
-    background: chartreuse;
-    animation: blend1 .5s linear 0s 1;
 }
 
-@keyframes blend1 {
-    0% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-300px, 0);
-    }
-}
-
-#box1.active {
+.container .aos_container.active .aos_content {
     opacity: 1;
-    animation: animate1 .5s ease 0s 1;
+    transform: translate3d(0, 0, 0) rotate3d(0deg, 0deg, 0deg) scale(1) skew(0deg, 0deg);
 }
 
-@keyframes animate1 {
-    0% {
-        opacity: 0;
-        transform: translate(-300px, 0);
-    }
+/* User choice of animation. */
 
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+.container #box1 .aos_content {
+    background: indigo;
+    transform: translateX(-200px);
 }
 
-
-
-
-
-
-#box2 {
-    opacity: 0;
-    background: crimson;
-    animation: blend2 .5s linear 0s 1;
+.container #box2 .aos_content {
+    background: #40DF30;
+    transform: translateX(200px);
 }
 
-@keyframes blend2 {
-    0% {
-        opacity: 1;
-        transform: translate(0px, 0px);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(300px, 0);
-    }
+.container #box3 .aos_content {
+    background: #2109EA;
+    transform: scale(0);
 }
 
-#box2.active {
-    opacity: 1;
-    animation: animate2 .5s ease 0s 1;
+.container #box4 .aos_content {
+    background: #02726D;
+    transform: scale(0);
 }
 
-@keyframes animate2 {
-    0% {
-        opacity: 0;
-        transform: translate(300px, 0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+.container #box5 .aos_content {
+    background: aqua;
+    transform: rotateX(90deg);
 }
 
-
-
-
-#box3 {
-    opacity: 0;
-    background: darkcyan;
-    animation: blend3 .5s linear 0s 1;
+.container #box6 .aos_content {
+    background: #ff00ff;
+    transform: rotateX(90deg);
 }
 
-@keyframes blend3 {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-300px, -300px);
-    }
+.container #box7 .aos_content {
+    background: aqua;
+    transform: translate3d(300px, 300px, 0);
 }
 
-#box3.active {
-    opacity: 1;
-    animation: animate3 .5s ease 0s 1;
+.container #box8 .aos_content {
+    background: #ff00ff;
+    transform: translate3d(-300px, -300px, 0);
 }
 
-@keyframes animate3 {
-    0% {
-        opacity: 0;
-        transform: translate(-300px, -300px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+.container #box1.active .aos_content {
+    transform: translateX(0);
 }
 
-
-
-
-#box4 {
-    opacity: 0;
-    background: darkorchid;
-    animation: blend4 .5s linear 0s 1;
+.container #box2.active .aos_content {
+    transform: translateX(0);
 }
 
-@keyframes blend4 {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(300px, -300px);
-    }
+.container #box3.active .aos_content {
+    transform: scale(1);
 }
 
-#box4.active {
-    opacity: 1;
-    animation: animate4 .5s ease 0s 1;
+.container #box4.active .aos_content {
+    transform: scale(1);
 }
 
-@keyframes animate4 {
-    0% {
-        opacity: 0;
-        transform: translate(300px, -300px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+.container #box5.active .aos_content {
+    transform: rotateX(0deg);
 }
 
-
-
-
-#box5 {
-    opacity: 0;
-    background: deeppink;
-    animation: blend5 .5s linear 0s 1;
+.container #box6.active .aos_content {
+    transform: rotateX(0deg);
 }
 
-@keyframes blend5 {
-    0% {
-        opacity: 1;
-        transform: translate(0px, 0px) rotateX(0deg);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(-300px, -300px) rotateX(-180deg);
-    }
+.container #box7.active .aos_content {
+    transform: translate3d(0, 0, 0);
 }
 
-#box5.active {
-    opacity: 1;
-    animation: animate5 .5s linear 0s 1;
-}
-
-@keyframes animate5 {
-    0% {
-        opacity: 0;
-        transform: translate(-300px, -300px) rotateX(-180deg);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px) rotateX(0deg);
-    }
-}
-
-
-
-
-
-#box6 {
-    opacity: 0;
-    background: maroon;
-    animation: blend6 .5s linear 0s 1;
-}
-
-@keyframes blend6 {
-    0% {
-        opacity: 1;
-        transform: translate(0px, 0px) rotateX(0deg);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(300px, -300px) rotateX(-180deg);
-    }
-}
-
-#box6.active {
-    opacity: 1;
-    animation: animate6 .5s linear 0s 1;
-}
-
-@keyframes animate6 {
-    0% {
-        opacity: 0;
-        transform: translate(300px, -300px) rotateX(-180deg);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0px, 0px) rotateX(0deg);
-    }
+.container #box8.active .aos_content {
+    transform: translate3d(0, 0, 0);
 }
