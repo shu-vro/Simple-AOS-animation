@@ -1,24 +1,14 @@
-// Target animation Array.
-var AnimationArray = [
-    'box1',
-    'box2',
-    'box3',
-    'box4',
-    'box5',
-    'box6',
-];
-for (let i = 0; i < AnimationArray.length; i++) {
-    window.addEventListener('scroll', function () {
-        // Select elements
-        var target = document.getElementById('' + AnimationArray[i] + '');
+var aos_container = document.querySelectorAll('.aos_container');
+var aos_content = document.querySelectorAll('.aos_content');
 
-        // Get position
-        var position = target.getBoundingClientRect().top - (window.innerHeight / 2);
-
-        if (position <= 0) {
-            target.classList.add('active');
+for (let i = 0; i < aos_container.length; i++) {
+    window.addEventListener('scroll', (e) => {
+        var positionY = aos_container[i].getBoundingClientRect().top - (window.innerHeight / 2);
+        aos_container[i].style.position = 'relative';
+        if (positionY <= 0) {
+            aos_container[i].classList.add('active');
         } else {
-            target.classList.remove('active');
+            aos_container[i].classList.remove('active');
         }
     })
 }
